@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main content area -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewResult"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/resultTV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:hint="Extracted text will be shown here."
+            android:inputType="textMultiLine"
+            android:textSize="16sp"
+            android:padding="12dp" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom toolbar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Erase button -->
+        <ImageView
+            android:id="@+id/btnErase"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:contentDescription="Erase"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            android:layout_marginStart="32dp"
+            app:srcCompat="@android:drawable/ic_menu_edit" />
+
+        <!-- Camera button -->
+        <ImageView
+            android:id="@+id/btnCamera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="Camera"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnErase"
+            app:layout_constraintEnd_toStartOf="@id/btnCopy"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        <!-- Copy button -->
+        <ImageView
+            android:id="@+id/btnCopy"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:contentDescription="Copy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="32dp"
+            app:srcCompat="?attr/actionModeCopyDrawable" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
